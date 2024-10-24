@@ -1,0 +1,610 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1233</width>
+    <height>737</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Sprite Editor</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QGroupBox" name="ToolBox">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>121</width>
+      <height>271</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Tools</string>
+    </property>
+    <widget class="QPushButton" name="MirrorButton">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>110</y>
+       <width>121</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Mirror</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="PencilButton">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>20</y>
+       <width>121</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Pencil</string>
+     </property>
+     <property name="checked">
+      <bool>false</bool>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="EraserButton">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>40</y>
+       <width>121</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Eraser</string>
+     </property>
+    </widget>
+    <widget class="QGroupBox" name="groupBox">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>130</y>
+       <width>121</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string/>
+     </property>
+     <widget class="QRadioButton" name="xAxisButton">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>81</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>X Axis</string>
+      </property>
+     </widget>
+     <widget class="QRadioButton" name="yAxisButton">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>40</y>
+        <width>81</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Y Axis</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QCheckBox" name="OnionSkinCheckBox">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>240</y>
+       <width>78</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Onion Skin</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QFrame" name="EditorFrame">
+    <property name="geometry">
+     <rect>
+      <x>120</x>
+      <y>0</y>
+      <width>921</width>
+      <height>681</height>
+     </rect>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: 1px solid black;</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <widget class="Canvas" name="CanvasWidget" native="true">
+     <property name="geometry">
+      <rect>
+       <x>130</x>
+       <y>10</y>
+       <width>661</width>
+       <height>661</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1px solid black;</string>
+     </property>
+    </widget>
+    <widget class="QFrame" name="box_2">
+     <property name="geometry">
+      <rect>
+       <x>130</x>
+       <y>10</y>
+       <width>661</width>
+       <height>661</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1px solid black;</string>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+    </widget>
+    <widget class="QLabel" name="onionSkin">
+     <property name="geometry">
+      <rect>
+       <x>130</x>
+       <y>10</y>
+       <width>661</width>
+       <height>661</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="scaledContents">
+      <bool>false</bool>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QSpinBox" name="widthBox">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>30</y>
+       <width>48</width>
+       <height>29</height>
+      </rect>
+     </property>
+     <property name="minimum">
+      <number>2</number>
+     </property>
+     <property name="maximum">
+      <number>64</number>
+     </property>
+     <property name="value">
+      <number>64</number>
+     </property>
+    </widget>
+    <widget class="QSpinBox" name="heightBox">
+     <property name="geometry">
+      <rect>
+       <x>70</x>
+       <y>30</y>
+       <width>48</width>
+       <height>29</height>
+      </rect>
+     </property>
+     <property name="minimum">
+      <number>2</number>
+     </property>
+     <property name="maximum">
+      <number>64</number>
+     </property>
+     <property name="value">
+      <number>64</number>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_2">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>63</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="text">
+      <string>Width</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_3">
+     <property name="geometry">
+      <rect>
+       <x>70</x>
+       <y>10</y>
+       <width>63</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="text">
+      <string>Height</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="sizeButton">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>60</y>
+       <width>91</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Change Size</string>
+     </property>
+    </widget>
+    <zorder>onionSkin</zorder>
+    <zorder>box_2</zorder>
+    <zorder>CanvasWidget</zorder>
+    <zorder>widthBox</zorder>
+    <zorder>heightBox</zorder>
+    <zorder>label_2</zorder>
+    <zorder>label_3</zorder>
+    <zorder>sizeButton</zorder>
+   </widget>
+   <widget class="QScrollArea" name="FramesBox">
+    <property name="geometry">
+     <rect>
+      <x>1040</x>
+      <y>0</y>
+      <width>191</width>
+      <height>461</height>
+     </rect>
+    </property>
+    <property name="horizontalScrollBarPolicy">
+     <enum>Qt::ScrollBarAlwaysOff</enum>
+    </property>
+    <property name="widgetResizable">
+     <bool>true</bool>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+    </property>
+    <widget class="QWidget" name="FramesBoxContents">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>189</width>
+       <height>459</height>
+      </rect>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>189</width>
+       <height>0</height>
+      </size>
+     </property>
+     <widget class="QWidget" name="verticalLayoutWidget">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>191</width>
+        <height>461</height>
+       </rect>
+      </property>
+      <layout class="QVBoxLayout" name="framesLayout"/>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="QFrame" name="PreviewFrame">
+    <property name="geometry">
+     <rect>
+      <x>1040</x>
+      <y>480</y>
+      <width>191</width>
+      <height>201</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: 1px solid black</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <widget class="QLabel" name="previewFrameDisplayLabel">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>0</y>
+       <width>150</width>
+       <height>150</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QSlider" name="previewFramePlaybackSpeed">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>150</y>
+       <width>171</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 0px</string>
+     </property>
+     <property name="minimum">
+      <number>-1</number>
+     </property>
+     <property name="maximum">
+      <number>900</number>
+     </property>
+     <property name="singleStep">
+      <number>100</number>
+     </property>
+     <property name="pageStep">
+      <number>100</number>
+     </property>
+     <property name="value">
+      <number>500</number>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="invertedAppearance">
+      <bool>false</bool>
+     </property>
+     <property name="invertedControls">
+      <bool>false</bool>
+     </property>
+     <property name="tickPosition">
+      <enum>QSlider::TicksAbove</enum>
+     </property>
+     <property name="tickInterval">
+      <number>100</number>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QFrame" name="ColorSelect">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>270</y>
+      <width>121</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <widget class="QPushButton" name="colorPicker">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>10</y>
+       <width>80</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Color Picker</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QPushButton" name="AddFrameButton">
+    <property name="geometry">
+     <rect>
+      <x>1040</x>
+      <y>460</y>
+      <width>191</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Add Frame</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="previewResolutionButton">
+    <property name="geometry">
+     <rect>
+      <x>1060</x>
+      <y>650</y>
+      <width>151</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="text">
+     <string>Original Resolution</string>
+    </property>
+    <property name="checkable">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QFrame" name="box">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>120</width>
+      <height>311</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: 1px solid black;</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+   </widget>
+   <widget class="QFrame" name="hotKeyFrame">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>310</y>
+      <width>121</width>
+      <height>371</height>
+     </rect>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <widget class="QLabel" name="hotkeyList">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>20</y>
+       <width>121</width>
+       <height>351</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;P: Pencil Tool&lt;/p&gt;&lt;p&gt;E: Eraser Tool&lt;/p&gt;&lt;p&gt;M: Mirror Image&lt;/p&gt;&lt;p&gt;X: Select X Axis&lt;/p&gt;&lt;p&gt;Y: Select Y Axis&lt;/p&gt;&lt;p&gt;O: Toggle Onion Skin&lt;/p&gt;&lt;p&gt;C: Color Picker&lt;/p&gt;&lt;p&gt;R: Preview Original Resolution&lt;/p&gt;&lt;p&gt;A: Add Frame&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+     </property>
+     <property name="wordWrap">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>121</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 700 12pt &quot;Nirmala UI&quot;;</string>
+     </property>
+     <property name="text">
+      <string>HotKeys</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignHCenter|Qt::AlignTop</set>
+     </property>
+    </widget>
+    <zorder>label</zorder>
+    <zorder>hotkeyList</zorder>
+   </widget>
+   <zorder>box</zorder>
+   <zorder>ToolBox</zorder>
+   <zorder>EditorFrame</zorder>
+   <zorder>FramesBox</zorder>
+   <zorder>PreviewFrame</zorder>
+   <zorder>ColorSelect</zorder>
+   <zorder>AddFrameButton</zorder>
+   <zorder>previewResolutionButton</zorder>
+   <zorder>hotKeyFrame</zorder>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1233</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>File</string>
+    </property>
+    <addaction name="actionSave"/>
+    <addaction name="actionLoad"/>
+   </widget>
+   <addaction name="menuFile"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionSave">
+   <property name="text">
+    <string>Save</string>
+   </property>
+  </action>
+  <action name="actionLoad">
+   <property name="text">
+    <string>Load</string>
+   </property>
+  </action>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>Canvas</class>
+   <extends>QWidget</extends>
+   <header>canvas.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>
